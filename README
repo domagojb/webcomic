@@ -1,0 +1,43 @@
+Requires python3.2. 
+ 
+This module checks for new specified comics and loads them.
+Every comic is defined as a new object of the class ComicLoader.
+
+The class takes two main parameters:
+
+siteURL : The URL of the webcomic that is going to be loaded.
+pathImgURLexp : The URL regular expression of the image of the 
+                comic which is used for finding the comic image 
+                in the website data.
+    
+These two parameters must be found "by hand", e.g. specified by the user.
+The image URL can be found by inspecting the comics site source code or by
+any other metod of inspecting the url. Some comics have already been included 
+in the "mycomics.txt" file.
+
+The class downloads the data from the site of the comic, finds the image URL
+and compares it to the saved image URL(which is saved in a text file called 
+by the webcomic). When they are different that means a new comic has been 
+published and opens it.
+
+
+Trivial usage:
+ 
+comicObjectName = ComicLoader("siteURL", "pathImgURLexp")
+comicObjectName.load()
+
+e.g.:
+xkcd = ComicLoader("http://xkcd.com/", "http://imgs.xkcd.com/comics/\S+\.\w+")
+xkcd.load()
+
+The function "load" does everything for you. Checks for new comics and loads them.
+Other functions can be also used separately.
+
+To Do/In progress: Multiple class extensions for unique comics.
+e.g.: Utility for loading the mouseover text on xkcd.com.
+      Overcoming first time opened "Are you 18?" sites.
+      Checking for all the comics that have not been read since
+      the last read comic.
+More ideas coming...
+
+
