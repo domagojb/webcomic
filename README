@@ -46,3 +46,4 @@ VERSION: 1.1 - 9th, July 2012.
 - fixed problem where it would stop if it couldn't read the sites data
     -> now it skips over that site and moves on
 - fixed pennyarcade url in mycomics.txt 
+- added doghousediaries and buttersafe to mycomics.txt
