@@ -40,4 +40,8 @@ e.g.: Utility for loading the mouseover text on xkcd.com.
       the last read comic.
 More ideas coming...
 
+VERSION: 0.1 - 4th, July 2012.
 
+VERSION: 0.2 - 9th, July 2012.
+- fixed problem where it would stop if it couldn't read the sites data
+    -> now it skips over that site and moves on
