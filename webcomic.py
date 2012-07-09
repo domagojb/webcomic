@@ -77,18 +77,26 @@ class ComicLoader:
         return dir_path + "/" + filename.group(1)
     
     def load(self):
-        """ Loads the comic and returns TRUE(1) or returns FALSE(0) if there is no new comic. """
+        """ Loads the comic and returns TRUE(1). Returns FALSE(0) if there is 
+            no new comic or ERROR(-1) if an error occured.
+        """
 
         #If the comic has not been defined, the new one is loaded
         if not self.isDefined():
-            self.loadNew()
+            # If an error had occured, stops
+            if self.loadNew() == -1:
+                return (-1)
             self.saveNewURL() # Saves the loaded url
             return 1 # Returns TRUE since a new comic has been published
+
         #else it checks if a new comic has been posted
-        elif self.isNew():
-            self.loadNew()
+        is_new = self.isNew()
+        if is_new == 1:
+            self.loadNew() 
             self.saveNewURL() # Saves the loaded url
             return 1 # Returns TRUE since a new comic has been published
+        elif is_new == -1:
+            return (-1)
         else:
             print("No new comic on " + self.siteURL)
             return 0 # Returns FALSE since no new comic has been published
@@ -124,8 +132,12 @@ class ComicLoader:
         filename = os.environ["HOME"] + "/.webcomic/comicdata.txt"
         urllib.request.urlretrieve(self.siteURL, filename)
         dataFile = open(filename, "r") 
-        data = dataFile.read()
-        dataFile.close()
+        try:
+            data = dataFile.read()
+            dataFile.close()
+        except:
+            print("ERROR: Could not read data from file for " + self.siteURL)
+            return (-1)
 
         #Find the image url in the data
         expression = self.pathImgURLexp 
