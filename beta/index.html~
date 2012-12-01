@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="webcomic.css" rel="stylesheet" />
+<title>{$pageTitle}</title>
+</head>
+<body>
+<body>
+ <center>
+ <div id="comic header">
+   <h3>{$comicName}</h3>
+      
+     
+            </div>
+            
+    <div id="lbody">
+<div id="comic image">
+{$comicImage}
+</div>
+<div id="comic description">
+{$comicAltText}
+{$comicDescription}
+</div>
+<div id="comic controls">
+<input type="submit" class="small secondary button radius" value="Previous"> <input type="submit" class="small secondary button" value="Next"> 
+</div>
+  </div>
+</body>
+</html>
