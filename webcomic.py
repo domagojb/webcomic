@@ -296,7 +296,7 @@ class HTMLcreator:
                        "<head>\n" +
                        "<link type=\"text/css\" rel=\"stylesheet\" href=\"stylesheets/webcomic.css\" />\n" +
                        "<title>Webcomic</title>\n" +
-                       "</head>\n>" +
+                       "</head>\n" +
                        "<body>\n")
 
         for i in range(0, len(self.queue)):
