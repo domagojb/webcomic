@@ -295,9 +295,9 @@ class HTMLcreator:
                        "<html>\n" +
                        "<head>\n" +
                        "<link type=\"text/css\" rel=\"stylesheet\" href=\"stylesheets/webcomic.css\" />\n" +
-                       "<title>Webcomic</title\n" +
-                       "</head\n>" +
-                       "<body\n")
+                       "<title>Webcomic</title>\n" +
+                       "</head>\n>" +
+                       "<body>\n")
 
         for i in range(0, len(self.queue)):
             htmlfile.write("<div class=\"comic\"><img src=\"" +

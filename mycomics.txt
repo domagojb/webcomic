@@ -1,4 +1,4 @@
-xkcd            :w= ComicLoader("http://xkcd.com/", "http://imgs.xkcd.com/comics/\S+\.\w+")
+xkcd            = ComicLoader("http://xkcd.com/", "http://imgs.xkcd.com/comics/\S+\.\w+")
 explosm         = ComicLoader("http://www.explosm.net/comics/", "http://www.explosm.net/db/files/Comics/\S+\.\w+")
 darklegacy      = ComicLoader("http://darklegacycomics.com/", "http://darklegacycomics.com/\d+\.\w+")
 smbc            = ComicLoader("http://www.smbc-comics.com/", "http://www.smbc-comics.com/comics/\d+\.\w+")
@@ -6,4 +6,4 @@ licd            = ComicLoader("http://leasticoulddo.com/", "http://cdn.leasticou
 pennyarcade     = ComicLoader("http://www.penny-arcade.com/comic", "http://art.penny-arcade.com/photos/.+.jpg")
 dinosaurcomics  = webcomic.ComicLoader("http://www.qwantz.com/index.php", "http://www.qwantz.com/comics/\S+\.\w+")
 doghousediaries = ComicLoader("http://www.thedoghousediaries.com", "http://thedoghousediaries.com/comics/uncategorized/.+.png")
-buttersafe      = ComicLoader("http://buttersafe.com/",            "http://buttersafe.com/comics/.+.jpg")   
+buttersafe      = ComicLoader("http://buttersafe.com/",            "http://buttersafe.com/comics/.+.jpg")
