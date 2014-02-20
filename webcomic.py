@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 """
     Requires python3 and higher.
 
@@ -9,16 +7,16 @@
     The class takes two main parameters:
 
         siteURL : The URL of the webcomic that is going to be loaded.
-        pathImgURLexp : The URL regular expression which is used for
-                        finding the comic image in the website data.
+        pathImgURLexp : The regular expression which is used for
+                        finding the comics image in the websites data.
 
     These two parameters must be found "by hand", e.g. specified by the user.
     The image URL can be found by inspecting the comics site source code or by
-    any other metod of inspecting the url. Some comics have already been included
+    any other method. Some comics have already been included
     in the "mycomics.txt" file.
 
     The class downloads the data from the site of the comic, finds the image URL
-    and compares it to the saved image URL(which is saved in a text file called
+    and compares it to the saved image URL (which is saved in a text file named
     by the webcomic). When they are different that means a new comic has been
     published and opens it.
 
@@ -230,7 +228,7 @@ class ComicLoader:
 
     How to use:
         - create ComicLoader type objects
-        - parse them to a HTMLCreator object as a list
+        - pass them to a HTMLCreator object as a list
         - call loadHTML method
 
     example:
@@ -322,18 +320,3 @@ class HTMLcreator:
         #Set all comics as read
         for i in range(0, len(self.queue)):
             self.queue[i].saveNewURL()
-
-
-
-xkcd            = ComicLoader("http://www.xkcd.com/",              "http://imgs.xkcd.com/comics/\S+\.\w+")
-explosm         = ComicLoader("http://www.explosm.net/comics/",    "http://www.explosm.net/db/files/Comics/\S+\.\w+")
-darklegacycomicscy = ComicLoader("http://www.darklegacycomics.com/",  "http://darklegacycomics.com/\d+\.\w+")
-smbc            = ComicLoader("http://www.smbc-comics.com/",       "http://www.smbc-comics.com/comics/\d+\.\w+")
-pennyarcade     = ComicLoader("http://www.penny-arcade.com/comic", "http://art.penny-arcade.com/photos/.+.jpg")
-licd            = ComicLoader("http://www.leasticoulddo.com/",     "http://cdn.leasticoulddo.com/comics/\d+\.\w+")
-dinosaurcomics  = ComicLoader("http://www.qwantz.com/index.php",   "http://www.qwantz.com/comics/\S+\.\w+")
-doghousediaries = ComicLoader("http://www.thedoghousediaries.com", "http://thedoghousediaries.com/comics/uncategorized/.+.png")
-buttersafe      = ComicLoader("http://buttersafe.com/",            "http://buttersafe.com/comics/.+.jpg")
-
-test = HTMLcreator([xkcd, explosm, smbc])
-test.loadHTML()

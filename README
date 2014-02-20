@@ -15,11 +15,11 @@
 
     These two parameters must be found "by hand", e.g. specified by the user.
     The image URL can be found by inspecting the comics site source code or by
-    any other metod of inspecting the url. Some comics have already been included
+    any other metod. Some comics have already been included
     in the "mycomics.txt" file.
 
     The class downloads the data from the site of the comic, finds the image URL
-    and compares it to the saved image URL(which is saved in a text file called
+    and compares it to the saved image URL (which is saved in a text file named
     by the webcomic). When they are different that means a new comic has been
     published and opens it.
 
@@ -44,7 +44,7 @@
 
     How to use:
         - create ComicLoader type objects
-        - parse them to a HTMLCreator object as a list
+        - pass them to a HTMLCreator object as a list
         - call freshShaveAndLoad method
 
     example:
